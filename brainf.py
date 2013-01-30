@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # brainf*** Interpreter in Python
-# Copyright (c) 2002 & 2006, James Tauber
+# Copyright (c) 2002 & 2006 & 2012 & 2013, James Tauber
 #
 # see http://en.wikipedia.org/wiki/Brainfuck
 
