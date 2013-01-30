@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#
 # brainf*** Interpreter in Python
 # Copyright (c) 2002 & 2006, James Tauber
 #
