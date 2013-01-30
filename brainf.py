@@ -7,6 +7,7 @@
 
 import sys
 
+
 class brainf:
     
     def __init__(self, program):
@@ -21,25 +22,35 @@ class brainf:
         
         while self.pc < stop:
             c = self.program[self.pc]
-            if   c == ">":   self.p += 1
-            elif c == "<":   self.p -= 1
-            elif c == "+":   self.mem[self.p] += 1
-            elif c == "-":   self.mem[self.p] -= 1
-            elif c == ".":   sys.stdout.write(chr(self.mem[self.p]))
-            elif c == ",":   self.mem[self.p] = ord(sys.stdin.read(1))
-            elif c == "[":   
-                depth = 1    
+            if c == ">":
+                self.p += 1
+            elif c == "<":
+                self.p -= 1
+            elif c == "+":
+                self.mem[self.p] += 1
+            elif c == "-":
+                self.mem[self.p] -= 1
+            elif c == ".":
+                sys.stdout.write(chr(self.mem[self.p]))
+            elif c == ",":
+                self.mem[self.p] = ord(sys.stdin.read(1))
+            elif c == "[":
+                depth = 1
                 start = end = self.pc
-                while depth: 
-                    end += 1 
-                    if self.program[end] == "[":   depth += 1
-                    if self.program[end] == "]":   depth -= 1
+                while depth:
+                    end += 1
+                    if self.program[end] == "[":
+                        depth += 1
+                    if self.program[end] == "]":
+                        depth -= 1
                 while self.mem[self.p]:
                     self.pc = start + 1
                     self.run(end)
-                self.pc = end     
-            elif c == "]":   raise "unbalanced ]"
-            else:            pass
+                self.pc = end
+            elif c == "]":
+                raise "unbalanced ]"
+            else:
+                pass
             self.pc += 1
 
 # hello world sample
