@@ -9,17 +9,17 @@ import sys
 
 
 class brainf:
-    
+
     def __init__(self, program):
         self.mem = [0] * 65536
         self.p = 0
         self.pc = 0
         self.program = program
-    
+
     def run(self, stop=None):
         if stop is None:
             stop = len(self.program)
-        
+
         while self.pc < stop:
             c = self.program[self.pc]
             if c == ">":
